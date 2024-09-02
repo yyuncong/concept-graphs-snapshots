@@ -739,7 +739,7 @@ def build_scenegraph(args):
                     if elapsed_time > TIMEOUT:
                         print("Timed out exceeded!")
                         output_dict["object_relation"] = "FAIL"
-                        continue
+                        output_dict["reason"] = "FAIL"
                     else:
                         try:
                             # Attempt to parse the output as a JSON
