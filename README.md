@@ -242,7 +242,7 @@ python slam/cfslam_pipeline_batch.py \
     merge_text_sim_thresh=0.8
 
 # On the ConceptGraphs-Detect 
-SCENE_NAMES=room0
+SCENE_NAME=room0
 THRESHOLD=1.2
 python slam/cfslam_pipeline_batch.py \
     dataset_root=$REPLICA_ROOT \
