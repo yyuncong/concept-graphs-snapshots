@@ -176,3 +176,6 @@ cfslam/tmp.bash
 cfslam/wandb
 cfslam/tmp.png
 cfslam/temp.json
+
+outputs/
+output/

@@ -90,7 +90,7 @@ def prepare_objects_save_vis(objects: MapObjectList, downsample_size: float=0.02
     for i in range(len(objects_to_save)):
         for k in list(objects_to_save[i].keys()):
             if k not in [
-                'pcd', 'bbox', 'clip_ft', 'text_ft', 'class_id', 'num_detections', 'inst_color'
+                'image_idx', 'pcd', 'bbox', 'clip_ft', 'text_ft', 'class_id', 'num_detections', 'inst_color', 'conf'
             ]:
                 del objects_to_save[i][k]
                 
@@ -315,6 +315,7 @@ def main(cfg : DictConfig):
                 "camera_pose": adjusted_pose,
                 "objects": objects_to_save,
                 "bg_objects": bg_objects_to_save,
+                "image_file": color_path.split("/")[-1],
             }
             with gzip.open(save_all_path, 'wb') as f:
                 pickle.dump(result, f)
